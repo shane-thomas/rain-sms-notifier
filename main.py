@@ -1,9 +1,8 @@
 import requests
 from twilio.rest import Client
+from creds import APIKEY, AUTH_TOKEN
 
-APIKEY = 'APIKEY'
 ACCOUNT_SID = 'AC5c3cfc36fb9fcf3d0600858d89eac2b0'
-AUTH_TOKEN = 'AUTHTOKEN'
 OWM_Endpoint = "https://api.openweathermap.org/data/2.5/forecast"
 
 
@@ -20,7 +19,7 @@ weather_params = {
 response = requests.get(OWM_Endpoint, params=weather_params)
 response.raise_for_status()
 weather_data = response.json()
-print(weather_data)
+# print(weather_data)
 
 
 will_rain = False
